@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpacePhoto Enhancer - Tingkatkan Kualitas Foto Anda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="space-background">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-rocket"></i> SpacePhoto Enhancer</h1>
+            <p>Tingkatkan kualitas foto Anda dengan teknologi luar angkasa!</p>
+        </header>
+
+        <div class="app-container">
+            <div class="upload-section">
+                <div class="drop-area" id="dropArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Seret & Jatuhkan Foto di sini</h3>
+                    <p>atau</p>
+                    <input type="file" id="fileInput" accept="image/*">
+                    <button class="btn-upload">Pilih File</button>
+                </div>
+                
+                <div class="preview-container hidden" id="previewContainer">
+                    <div class="image-comparison">
+                        <div class="image-before">
+                            <img id="originalImage" src="" alt="Original">
+                            <div class="label">Sebelum</div>
+                        </div>
+                        <div class="image-after">
+                            <img id="enhancedImage" src="" alt="Enhanced">
+                            <div class="label">Sesudah</div>
+                        </div>
+                    </div>
+                    <input type="range" id="slider" min="0" max="100" value="50">
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="enhance-options">
+                    <h3><i class="fas fa-sliders-h"></i> Pengaturan Peningkatan</h3>
+                    
+                    <div class="option-group">
+                        <label for="sharpness">Ketajaman</label>
+                        <input type="range" id="sharpness" min="0" max="100" value="50">
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="brightness">Kecerahan</label>
+                        <input type="range" id="brightness" min="0" max="100" value="50">
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="contrast">Kontras</label>
+                        <input type="range" id="contrast" min="0" max="100" value="50">
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="noise">Pengurangan Noise</label>
+                        <input type="range" id="noise" min="0" max="100" value="50">
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="enhanceBtn" class="btn-enhance" disabled>
+                        <i class="fas fa-magic"></i> Tingkatkan Foto
+                    </button>
+                    <button id="downloadBtn" class="btn-download" disabled>
+                        <i class="fas fa-download"></i> Unduh Hasil
+                    </button>
+                    <button id="resetBtn" class="btn-reset">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="donation-section">
+            <h3>Dukung Pengembangan Aplikasi Ini</h3>
+            <p>Jika Anda menyukai aplikasi ini, pertimbangkan untuk memberikan dukungan:</p>
+            <div class="donation-methods">
+                <div class="donation-method">
+                    <img src="https://files.catbox.moe/vy9xju.jpg" alt="QRIS/DANA">
+                    <p>Scan QRIS/DANA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2023 SpacePhoto Enhancer | Dibuat dengan <i class="fas fa-heart"></i> untuk pecinta fotografi</p>
+    </footer>
+
+    <div class="loading-modal hidden" id="loadingModal">
+        <div class="loading-content">
+            <div class="spinner">
+                <div class="planet"></div>
+                <div class="moon"></div>
+            </div>
+            <p>Meningkatkan kualitas foto...</p>
+            <p class="loading-text">Menggunakan teknologi luar angkasa</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
